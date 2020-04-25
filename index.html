@@ -1,0 +1,32 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Capstone - Travel App</title><link href="main.css" rel="stylesheet"></head><body><div id="web-loading"><svg width="50vw" height="100vh" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"><circle cx="18" cy="50" r="4" fill="#e15b64"><animate attributeName="cy" values="34;66;34" times="0;0.5;1" dur="1s" calcMode="spline" keySplines="0.5 0 0.5 1;0.5 0 0.5 1" begin="0s" repeatCount="indefinite"></animate></circle><circle cx="27" cy="61.31370849898476" r="4" fill="#f47e60"><animate attributeName="cy" values="34;66;34" times="0;0.5;1" dur="1s" calcMode="spline" keySplines="0.5 0 0.5 1;0.5 0 0.5 1" begin="-0.125s" repeatCount="indefinite"></animate></circle><circle cx="36" cy="66" r="4" fill="#f8b26a"><animate attributeName="cy" values="34;66;34" times="0;0.5;1" dur="1s" calcMode="spline" keySplines="0.5 0 0.5 1;0.5 0 0.5 1" begin="-0.25s" repeatCount="indefinite"></animate></circle><circle cx="45" cy="61.31370849898476" r="4" fill="#abbd81"><animate attributeName="cy" values="34;66;34" times="0;0.5;1" dur="1s" calcMode="spline" keySplines="0.5 0 0.5 1;0.5 0 0.5 1" begin="-0.375s" repeatCount="indefinite"></animate></circle><circle cx="54" cy="50" r="4" fill="#e15b64"><animate attributeName="cy" values="34;66;34" times="0;0.5;1" dur="1s" calcMode="spline" keySplines="0.5 0 0.5 1;0.5 0 0.5 1" begin="-0.5s" repeatCount="indefinite"></animate></circle><circle cx="63" cy="38.68629150101524" r="4" fill="#f47e60"><animate attributeName="cy" values="34;66;34" times="0;0.5;1" dur="1s" calcMode="spline" keySplines="0.5 0 0.5 1;0.5 0 0.5 1" begin="-0.625s" repeatCount="indefinite"></animate></circle><circle cx="72" cy="34" r="4" fill="#f8b26a"><animate attributeName="cy" values="34;66;34" times="0;0.5;1" dur="1s" calcMode="spline" keySplines="0.5 0 0.5 1;0.5 0 0.5 1" begin="-0.75s" repeatCount="indefinite"></animate></circle><circle cx="81" cy="38.68629150101523" r="4" fill="#abbd81"><animate attributeName="cy" values="34;66;34" times="0;0.5;1" dur="1s" calcMode="spline" keySplines="0.5 0 0.5 1;0.5 0 0.5 1" begin="-0.875s" repeatCount="indefinite"></animate></circle></svg></div><main id="main"><h1>Travel Planner</h1><form autocomplete="off"><div id="place-dev"><label for="place">My trip to:</label> <input id="place" class="input" placeholder="Enter Location" value=""> <label for="start-date">Start Date:</label> <input id="start-date" class="input" type="date" required> <label for="end-date">End Date:</label> <input id="end-date" class="input" type="date" required></div><dev id="btn"><input id="submit" type="submit" value="add"></dev></form><div id="description"><h3>Enter a new trip now, what are you waiting for?</h3><h4>Enjoy ;)</h4></div><div id="loading"><svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"><g transform="translate(50,50)"><circle cx="0" cy="0" r="10" fill="none" stroke="#d74946" stroke-width="4" stroke-dasharray="31.41592653589793 31.41592653589793"><animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" times="0;1" dur="1s" calcMode="spline" keySplines="0.2 0 0.8 1" begin="0" repeatCount="indefinite"></animateTransform></circle><circle cx="0" cy="0" r="20" fill="none" stroke="#00ce63" stroke-width="4" stroke-dasharray="62.83185307179586 62.83185307179586"><animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" times="0;1" dur="1s" calcMode="spline" keySplines="0.2 0 0.8 1" begin="-0.25" repeatCount="indefinite"></animateTransform></circle><circle cx="0" cy="0" r="30" fill="none" stroke="#f0af31" stroke-width="4" stroke-dasharray="94.24777960769379 94.24777960769379"><animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" times="0;1" dur="1s" calcMode="spline" keySplines="0.2 0 0.8 1" begin="-0.5" repeatCount="indefinite"></animateTransform></circle><circle cx="0" cy="0" r="40" fill="none" stroke="#4db5ff" stroke-width="4" stroke-dasharray="125.66370614359172 125.66370614359172"><animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" times="0;1" dur="1s" calcMode="spline" keySplines="0.2 0 0.8 1" begin="-0.75" repeatCount="indefinite"></animateTransform></circle></g></svg></div></main><script>if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+            console.log('Your browser supports service worker');
+        } else {
+            console.log('Your browser does not support service worker');
+        }
+        const webLoading = document.querySelector('#web-loading')
+        const main = document.querySelector('#main')
+
+        function showHide() {
+            webLoading.style.opacity = 0
+
+            function showMain() {
+                webLoading.style.display = 'none'
+                main.style.display = 'block'
+
+                function opacity() {
+                    main.style.opacity = 1
+                }
+
+                setTimeout( opacity, 1000 )
+
+            }
+
+            setTimeout( showMain, 2000 )
+        }
+
+
+        setTimeout( showHide, 2000 )</script><script src="main.js"></script></body></html>
